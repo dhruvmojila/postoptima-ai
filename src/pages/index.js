@@ -14,7 +14,7 @@ export default function Home() {
           🚀 PostOptima AI
         </h1>
         <p className="text-xl sm:text-2xl max-w-xl mx-auto mb-6 text-gray-300">
-          Know your post's performance before it goes live. AI-powered
+          Know your post&apos;s performance before it goes live. AI-powered
           predictions for Twitter, Instagram, Facebook, LinkedIn.
         </p>
         <Link href="/dashboard">
