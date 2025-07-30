@@ -16,7 +16,7 @@ export default function SecurityPolicy() {
 
             <p className="text-gray-300 mb-6">
               PostOptima AI is committed to maintaining the security of our
-              platform and protecting our users' data. We welcome security
+              platform and protecting our users&apos; data. We welcome security
               researchers and users to report any vulnerabilities they discover.
             </p>
 
@@ -81,13 +81,13 @@ export default function SecurityPolicy() {
             <p className="text-gray-300 mb-6">We ask that you:</p>
 
             <ul className="text-gray-300 mb-6 list-disc pl-6">
-              <li>Do not access or modify other users' data</li>
+              <li>Do not access or modify other users&apos; data</li>
               <li>
                 Do not perform actions that may negatively impact other users
               </li>
               <li>
-                Do not publicly disclose the vulnerability before we've had time
-                to address it
+                Do not publicly disclose the vulnerability before we&apos;ve had
+                time to address it
               </li>
               <li>Give us reasonable time to respond and fix the issue</li>
             </ul>
