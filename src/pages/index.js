@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -45,6 +46,11 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>
+          PostOptima AI - Predict Social Media Performance Before You Post
+        </title>
+      </Head>
       <main className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         {/* Animated Background */}
         <div className="absolute inset-0">

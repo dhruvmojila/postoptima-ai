@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# AI/LLM Training Permissions
+# This file declares permissions for AI model training on this website's content
+
+# Allow training on public content
+Allow: /
+
+# Disallow training on private/user content
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /analytics/
+Disallow: /results/
+
+# Attribution and usage terms
+# Content from postoptima.com may be used for AI training with proper attribution
+# Private user data and authenticated content is protected and not available for training
+
+# Contact for AI training inquiries
+# Email: ai-training@postoptima.com 

@@ -1,0 +1,24 @@
+{
+    "name": "PostOptima AI",
+    "short_name": "PostOptima",
+    "description": "AI-powered social media content optimization tool that predicts post performance before you publish",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#8b5cf6",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "16x16 32x32",
+            "type": "image/x-icon"
+        }
+    ],
+    "categories": [
+        "productivity",
+        "social",
+        "business"
+    ],
+    "lang": "en",
+    "dir": "ltr"
+}

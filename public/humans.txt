@@ -1,0 +1,13 @@
+/* TEAM */
+    Developer: PostOptima AI Team
+    Contact: hello@postoptima.com
+    From: Global
+
+/* SITE */
+    Last update: 2024/12/19
+    Language: English
+    Doctype: HTML5
+    IDE: VS Code
+    Standards: HTML5, CSS3, JavaScript ES6+
+    Components: Next.js, React, Tailwind CSS
+    Software: Node.js, Supabase, Stripe 
