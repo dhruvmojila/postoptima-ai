@@ -6,8 +6,8 @@ export default function Document() {
       <Head>
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9516790941040153"
+          crossorigin="anonymous"
         ></script>
       </Head>
       <body className="antialiased">
