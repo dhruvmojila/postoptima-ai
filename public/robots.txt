@@ -12,6 +12,9 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 Disallow: /private/
+Disallow: /dashboard
+Disallow: /analytics
+Disallow: /results
 
 # Allow important pages
 Allow: /
