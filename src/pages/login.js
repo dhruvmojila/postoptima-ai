@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../lib/supabaseClient";
 import Link from "next/link";
+import { useAuth } from "@/lib/authContext";
 
 export default function Login() {
   const router = useRouter();
+  const { user, loading: authLoading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!authLoading && user) {
+      router.replace("/dashboard");
+    }
+  }, [user, authLoading, router]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -37,6 +45,8 @@ export default function Login() {
     });
     if (error) setErrorMsg("Google login failed: " + error.message);
   };
+
+  if (authLoading || user) return null;
 
   return (
     <main className="min-h-screen bg-black text-white flex items-center justify-center px-4">
