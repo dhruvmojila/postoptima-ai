@@ -48,6 +48,11 @@ export default function Header() {
             label="Pricing"
             current={router.pathname === "/pricing"}
           />
+          <NavLink
+            href="/security-policy"
+            label="policy"
+            current={router.pathname === "/security-policy"}
+          />
         </div>
         <div className="flex items-center gap-4">
           {loading ? null : user ? (
