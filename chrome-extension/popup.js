@@ -134,6 +134,7 @@ async function loadUserDetails(token) {
       },
     });
     const data = await res.json();
+    print(data);
     if (Array.isArray(data) && data[0]?.plan === "free") {
       document.getElementById("upgrade").style.display = "block";
     } else {

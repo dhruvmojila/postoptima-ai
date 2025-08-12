@@ -183,7 +183,7 @@ export default function Login() {
         {isExtensionLogin && (
           <div className="bg-blue-900 p-3 rounded text-sm">
             <p>
-              🔗 You're logging in through the browser extension. After
+              🔗 You&apos;re logging in through the browser extension. After
               successful login, you can close this tab and the extension will be
               authenticated.
             </p>
