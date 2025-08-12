@@ -3,47 +3,116 @@
   <head>
     <title>PostOptima AI</title>
     <style>
-      body {
-        font-family: sans-serif;
-        padding: 12px;
-        width: 320px;
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
       }
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial;
+        padding: 14px;
+        width: 360px;
+        background: #0b0b0f;
+        color: #e5e7eb;
+        margin: 0;
+      }
+      h3 {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        color: #a78bfa;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 12px;
+        overflow: hidden;
+      }
+      input,
       textarea {
         width: 100%;
-        height: 100px;
-        margin-bottom: 10px;
+        max-width: 100%;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #fff;
+        border-radius: 8px;
+        padding: 10px;
+        margin-top: 8px;
+        display: block;
       }
-      button {
+      textarea {
+        resize: vertical;
+      }
+      button.primary {
         width: 100%;
+        max-width: 100%;
         padding: 10px;
         margin-top: 10px;
-        background-color: #111;
+        background: #7c3aed;
         color: #fff;
         border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      button.secondary {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        background: #1f2937;
+        color: #e5e7eb;
+        border: 1px solid #374151;
+        border-radius: 8px;
         cursor: pointer;
       }
       #result {
-        font-size: 14px;
-        margin-top: 15px;
+        font-size: 13px;
+        margin-top: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 10px;
+        overflow-wrap: anywhere;
       }
-      #upgrade {
-        background: #ffaa00;
-        margin-top: 8px;
+      .row {
+        display: flex;
+        gap: 8px;
+      }
+      .col {
+        flex: 1;
+        min-width: 0;
+      }
+      .muted {
+        color: #9ca3af;
+        font-size: 12px;
       }
     </style>
   </head>
   <body>
     <h3>PostOptima AI</h3>
-    <div id="loginForm">
+
+    <div id="loginForm" class="card">
+      <div class="muted">Log in to analyze your posts</div>
       <input type="email" id="email" placeholder="Email" />
       <input type="password" id="password" placeholder="Password" />
-      <button id="loginBtn">Login</button>
+      <button id="loginBtn" class="primary">Login</button>
+      <button id="googleBtn" class="secondary">Continue with Google</button>
     </div>
 
-    <div id="analyzerUI" style="display: none">
-      <textarea id="postText" placeholder="Paste your post here..."></textarea>
-      <button id="analyzeBtn">Analyze</button>
-      <button id="upgrade" style="display: none">Upgrade to Premium</button>
+    <div id="analyzerUI" class="card" style="display: none">
+      <textarea
+        id="postText"
+        placeholder="Paste or type your post..."
+        rows="6"
+      ></textarea>
+      <div class="row">
+        <button id="analyzeBtn" class="primary col">Analyze</button>
+        <button id="logoutBtn" class="secondary col">Logout</button>
+      </div>
+      <button id="upgrade" class="secondary" style="display: none">
+        Upgrade to Premium
+      </button>
       <div id="result"></div>
     </div>
 

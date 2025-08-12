@@ -7,8 +7,10 @@
         "contextMenus",
         "storage",
         "activeTab",
+        "tabs",
         "scripting",
-        "notifications"
+        "notifications",
+        "identity"
     ],
     "host_permissions": [
         "<all_urls>"
@@ -22,5 +24,10 @@
     },
     "icons": {
         "128": "icon.png"
+    },
+    "externally_connectable": {
+        "matches": [
+            "https://postoptima.com/*"
+        ]
     }
 }
