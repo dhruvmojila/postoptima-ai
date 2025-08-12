@@ -21,6 +21,4 @@ Allow: /
 Allow: /pricing
 Allow: /login
 Allow: /signup
-Allow: /dashboard
-Allow: /analytics
-Allow: /results 
+Allow: /security-policy

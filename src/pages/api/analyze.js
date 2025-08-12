@@ -1,3 +1,4 @@
+import { corsMiddleware } from "@/lib/cors";
 import { getSupabaseServerClient } from "@/lib/supabaseServerClient";
 
 export default async function handler(req, res) {
