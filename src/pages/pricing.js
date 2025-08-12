@@ -1,4 +1,44 @@
+import { supabase } from "@/lib/supabaseClient";
+import { useState } from "react";
+
 export default function Pricing() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const startCheckout = async () => {
+    try {
+      setLoading(true);
+      setError("");
+      const session = await supabase.auth.getSession();
+      const token = session.data?.session?.access_token;
+      const user = session.data?.session?.user;
+      if (!token || !user) {
+        window.location.href = "/login";
+        return;
+      }
+
+      const res = await fetch("/api/create-checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ user_id: user.id, email: user.email }),
+      });
+
+      const { url, error: apiError } = await res.json();
+      if (apiError || !url) {
+        setError(apiError || "Unable to start checkout");
+        return;
+      }
+      window.location.href = url;
+    } catch (_) {
+      setError("Something went wrong. Try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main className="max-w-2xl mx-auto py-10 px-4">
       <h2 className="text-3xl font-bold mb-6">Pricing</h2>
@@ -18,9 +58,14 @@ export default function Pricing() {
             <li>Advanced suggestions</li>
             <li>No ads</li>
           </ul>
-          <button className="bg-purple-600 text-white px-6 py-2 mt-4 rounded hover:bg-purple-700 transition">
-            Upgrade
+          <button
+            onClick={startCheckout}
+            disabled={loading}
+            className="bg-purple-600 text-white px-6 py-2 mt-4 rounded hover:bg-purple-700 transition disabled:opacity-60"
+          >
+            {loading ? "Redirecting..." : "Upgrade"}
           </button>
+          {error && <p className="text-sm text-red-400 mt-2">{error}</p>}
         </div>
       </div>
     </main>
