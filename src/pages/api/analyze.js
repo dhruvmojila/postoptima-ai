@@ -1,6 +1,10 @@
 import { getSupabaseServerClient } from "@/lib/supabaseServerClient";
 
 export default async function handler(req, res) {
+  if (corsMiddleware(req, res)) {
+    return; // Preflight request was handled
+  }
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
